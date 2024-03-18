@@ -2,7 +2,7 @@
 
 public record ProductFilter(
     string? Name,
-    DateTime? ProduceDate,
+    DateOnly? ProduceDate,
     bool? IsAvailable
     //CreatorId
     );

@@ -2,7 +2,7 @@
 
 public record ProductCreate(
     string Name,
-    DateTime ProduceDate,
+    DateOnly ProduceDate,
     string ManufacturerEmail,
     string ManufacturerPhone,
     bool IsAvailable
