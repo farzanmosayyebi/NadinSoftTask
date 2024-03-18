@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using NadinSoftTask.Core.Models;
-using NadinSoftTask.Infrastructure.Data;
 
 namespace NadinSoftTask.Infrastructure.Data.Commands.Create;
 

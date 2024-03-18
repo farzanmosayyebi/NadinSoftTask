@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "vByrnw5p9BaDEld3FvW0zOhyYbSb72yU4pw2O3ITIgI=",
+  "Source": "NadinSoftTask.Api",
+  "BasePath": "_content/NadinSoftTask.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ErikEJ.EntityFrameworkCore.SqlServer.DateOnlyTimeOnly" Version="7.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NadinSoftTask.Application\NadinSoftTask.Application.csproj" />
+    <ProjectReference Include="..\NadinSoftTask.Core\NadinSoftTask.Core.csproj" />
     <ProjectReference Include="..\NadinSoftTask.Infrastructure\NadinSoftTask.Infrastructure.csproj" />
   </ItemGroup>
 

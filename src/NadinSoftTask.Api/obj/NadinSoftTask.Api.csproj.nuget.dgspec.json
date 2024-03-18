@@ -28,8 +28,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Application\\NadinSoftTask.Application.csproj": {
+                "projectPath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Application\\NadinSoftTask.Application.csproj"
+              },
               "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Core\\NadinSoftTask.Core.csproj": {
                 "projectPath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Core\\NadinSoftTask.Core.csproj"
+              },
+              "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Infrastructure\\NadinSoftTask.Infrastructure.csproj": {
+                "projectPath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Infrastructure\\NadinSoftTask.Infrastructure.csproj"
               }
             }
           }
@@ -44,6 +50,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "ErikEJ.EntityFrameworkCore.SqlServer.DateOnlyTimeOnly": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.13, )"
@@ -68,6 +78,68 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Application\\NadinSoftTask.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Application\\NadinSoftTask.Application.csproj",
+        "projectName": "NadinSoftTask.Application",
+        "projectPath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Application\\NadinSoftTask.Application.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Core\\NadinSoftTask.Core.csproj": {
+                "projectPath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Core\\NadinSoftTask.Core.csproj"
+              },
+              "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Infrastructure\\NadinSoftTask.Infrastructure.csproj": {
+                "projectPath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Infrastructure\\NadinSoftTask.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -113,6 +185,83 @@
           "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Infrastructure\\NadinSoftTask.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Infrastructure\\NadinSoftTask.Infrastructure.csproj",
+        "projectName": "NadinSoftTask.Infrastructure",
+        "projectPath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Infrastructure\\NadinSoftTask.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Core\\NadinSoftTask.Core.csproj": {
+                "projectPath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Core\\NadinSoftTask.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.17, )"
             }
