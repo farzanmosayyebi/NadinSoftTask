@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NadinSoftTask.Api", "NadinSoftTask.Api\NadinSoftTask.Api.csproj", "{FB18CBB9-7B77-45F9-8DF0-AF002718D5F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NadinSoftTask.Api", "NadinSoftTask.Api\NadinSoftTask.Api.csproj", "{FB18CBB9-7B77-45F9-8DF0-AF002718D5F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NadinSoftTask.Core", "NadinSoftTask.Core\NadinSoftTask.Core.csproj", "{6E7EBBF4-3D47-4893-83D5-FF9F404C2242}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NadinSoftTask.Infrastructure", "NadinSoftTask.Infrastructure\NadinSoftTask.Infrastructure.csproj", "{43A4E5E3-75FF-4D4B-8105-F12BAAC88935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NadinSoftTask.Application", "NadinSoftTask.Application\NadinSoftTask.Application.csproj", "{79BAB825-97DF-49E3-A2A8-367AEB686EF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{FB18CBB9-7B77-45F9-8DF0-AF002718D5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB18CBB9-7B77-45F9-8DF0-AF002718D5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB18CBB9-7B77-45F9-8DF0-AF002718D5F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E7EBBF4-3D47-4893-83D5-FF9F404C2242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7EBBF4-3D47-4893-83D5-FF9F404C2242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7EBBF4-3D47-4893-83D5-FF9F404C2242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7EBBF4-3D47-4893-83D5-FF9F404C2242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43A4E5E3-75FF-4D4B-8105-F12BAAC88935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43A4E5E3-75FF-4D4B-8105-F12BAAC88935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43A4E5E3-75FF-4D4B-8105-F12BAAC88935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43A4E5E3-75FF-4D4B-8105-F12BAAC88935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79BAB825-97DF-49E3-A2A8-367AEB686EF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79BAB825-97DF-49E3-A2A8-367AEB686EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79BAB825-97DF-49E3-A2A8-367AEB686EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79BAB825-97DF-49E3-A2A8-367AEB686EF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

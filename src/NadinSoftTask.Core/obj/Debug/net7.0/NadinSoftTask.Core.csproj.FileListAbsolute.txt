@@ -1,0 +1,13 @@
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\bin\Debug\net7.0\NadinSoftTask.Core.deps.json
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\bin\Debug\net7.0\NadinSoftTask.Core.dll
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\bin\Debug\net7.0\NadinSoftTask.Core.pdb
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\obj\Debug\net7.0\NadinSoftTask.Core.csproj.AssemblyReference.cache
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\obj\Debug\net7.0\NadinSoftTask.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\obj\Debug\net7.0\NadinSoftTask.Core.AssemblyInfoInputs.cache
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\obj\Debug\net7.0\NadinSoftTask.Core.AssemblyInfo.cs
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\obj\Debug\net7.0\NadinSoftTask.Core.csproj.CoreCompileInputs.cache
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\obj\Debug\net7.0\NadinSoftTask.Core.sourcelink.json
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\obj\Debug\net7.0\NadinSoftTask.Core.dll
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\obj\Debug\net7.0\refint\NadinSoftTask.Core.dll
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\obj\Debug\net7.0\NadinSoftTask.Core.pdb
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Core\obj\Debug\net7.0\ref\NadinSoftTask.Core.dll

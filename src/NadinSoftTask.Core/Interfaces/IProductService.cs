@@ -6,7 +6,7 @@ public interface IProductService
 {
     Task<int> CreateProductAsync(ProductCreate productCreate);
     Task<List<ProductGet>> ListProductsAsync(ProductFilter productFilter);
-    Task<ProductGet> GetByIdAsync(int id);
-    Task UpdateAsync(ProductUpdate productUpdate);
-    Task DeleteAsync(int id);
+    Task<ProductGet> GetProductByIdAsync(int id);
+    Task<ProductGet> UpdateProductAsync(ProductUpdate productUpdate);
+    Task DeleteProductAsync(int id);
 }

@@ -1,0 +1,16 @@
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\bin\Debug\net7.0\NadinSoftTask.Infrastructure.deps.json
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\bin\Debug\net7.0\NadinSoftTask.Infrastructure.dll
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\bin\Debug\net7.0\NadinSoftTask.Infrastructure.pdb
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\bin\Debug\net7.0\NadinSoftTask.Core.dll
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\bin\Debug\net7.0\NadinSoftTask.Core.pdb
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\NadinSoftTask.Infrastructure.csproj.AssemblyReference.cache
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\NadinSoftTask.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\NadinSoftTask.Infrastructure.AssemblyInfoInputs.cache
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\NadinSoftTask.Infrastructure.AssemblyInfo.cs
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\NadinSoftTask.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\NadinSoftTask.Infrastructure.sourcelink.json
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\NadinSoftTask.Infrastructure.csproj.CopyComplete
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\NadinSoftTask.Infrastructure.dll
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\refint\NadinSoftTask.Infrastructure.dll
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\NadinSoftTask.Infrastructure.pdb
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\ref\NadinSoftTask.Infrastructure.dll
