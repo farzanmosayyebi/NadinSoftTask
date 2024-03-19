@@ -14,3 +14,6 @@ D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debu
 D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\refint\NadinSoftTask.Infrastructure.dll
 D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\NadinSoftTask.Infrastructure.pdb
 D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\ref\NadinSoftTask.Infrastructure.dll
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\bin\Debug\net7.0\NadinSoftTask.Infrastructure.runtimeconfig.json
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\NadinSoftTask.Infrastructure.genruntimeconfig.cache
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Infrastructure\obj\Debug\net7.0\EFCoreSqlServerDateOnlyTimeOnly.cs

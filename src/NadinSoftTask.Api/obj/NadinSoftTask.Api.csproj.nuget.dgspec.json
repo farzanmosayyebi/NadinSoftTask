@@ -253,11 +253,21 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "ErikEJ.EntityFrameworkCore.SqlServer.DateOnlyTimeOnly": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.17, )"
             },
