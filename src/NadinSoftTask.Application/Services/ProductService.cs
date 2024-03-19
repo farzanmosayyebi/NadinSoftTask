@@ -25,13 +25,13 @@ public class ProductService : IProductService
     {
         Product product = _mapper.Map<Product>(productCreate);
         
-        var request = new CreateCommand<Product>(product);
+        var request = new CreateCommand(product);
         return await _mediator.Send(request);
     }
 
     public async Task<ProductGet> GetProductByIdAsync(int id)
     {
-        var request = new GetByIdQuery<Product>(id);
+        var request = new GetByIdQuery(id);
         Product product = await _mediator.Send(request);
         
         return _mapper.Map<ProductGet>(product);
@@ -39,7 +39,7 @@ public class ProductService : IProductService
 
     public async Task<List<ProductGet>> ListProductsAsync(ProductFilter productFilter)
     {
-        var request = new ListEntitiesQuery<Product>();
+        var request = new ListEntitiesQuery();
         List<Product> products = await _mediator.Send(request);
        
         return _mapper.Map<List<ProductGet>>(products);
@@ -49,7 +49,7 @@ public class ProductService : IProductService
     {
         Product product = _mapper.Map<Product>(productUpdate);
 
-        var request = new UpdateCommand<Product>(product);
+        var request = new UpdateCommand(product);
         Product result = await _mediator.Send(request);
         
         return _mapper.Map<ProductGet>(result);
@@ -57,9 +57,9 @@ public class ProductService : IProductService
 
     public async Task DeleteProductAsync(int id)
     {
-        var product = await _mediator.Send(new GetByIdQuery<Product>(id));
+        var product = await _mediator.Send(new GetByIdQuery(id));
 
         if (product != null)
-            await _mediator.Send(new DeleteCommand<Product>(product));
+            await _mediator.Send(new DeleteCommand(product));
     }
 }
