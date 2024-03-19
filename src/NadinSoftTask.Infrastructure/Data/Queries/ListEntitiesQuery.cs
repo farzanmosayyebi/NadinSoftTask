@@ -4,20 +4,20 @@ using System.Linq.Expressions;
 
 namespace NadinSoftTask.Infrastructure.Data.Queries;
 
-public class ListEntitiesQuery<T> : IRequest<List<T>> where T : EntityBase
+public class ListEntitiesQuery : IRequest<List<Product>>
 {
-    public Expression<Func<T, bool>>[] Filters { get; set; }
+    public Expression<Func<Product, bool>>[] Filters { get; set; }
     public int? Skip { get; set; }
     public int? Take { get; set; }
-    public Expression<Func<T, object>>[] Includes { get; set; }
+    public Expression<Func<Product, object>>[] Includes { get; set; }
 
-    public ListEntitiesQuery(Expression<Func<T, bool>>[] filters = null!,
+    public ListEntitiesQuery(Expression<Func<Product, bool>>[] filters = null!,
             int? skip = null,
             int? take = null,
-            params Expression<Func<T, object>>[] includes)
+            params Expression<Func<Product, object>>[] includes)
     {
-        Filters = filters ?? Array.Empty<Expression<Func<T, bool>>>();
-        Includes = includes ?? Array.Empty<Expression<Func<T, object>>>();
+        Filters = filters ?? Array.Empty<Expression<Func<Product, bool>>>();
+        Includes = includes ?? Array.Empty<Expression<Func<Product, object>>>();
 
         Skip = skip;
         Take = take;

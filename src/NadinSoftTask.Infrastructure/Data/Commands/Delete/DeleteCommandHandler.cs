@@ -4,7 +4,7 @@ using NadinSoftTask.Core.Models;
 
 namespace NadinSoftTask.Infrastructure.Data.Commands.Delete;
 
-public class DeleteCommandHandler<T> : IRequestHandler<DeleteCommand<T>> where T : EntityBase
+public class DeleteCommandHandler : IRequestHandler<DeleteCommand> 
 {
     private readonly ApplicationDbContext _context;
 
@@ -13,9 +13,9 @@ public class DeleteCommandHandler<T> : IRequestHandler<DeleteCommand<T>> where T
         _context = context;
     }
 
-    public async Task Handle(DeleteCommand<T> command, CancellationToken cancellationToken)
+    public async Task Handle(DeleteCommand command, CancellationToken cancellationToken)
     {
-        _context.Set<T>().Remove(command.Entity);
+        _context.Products.Remove(command.Entity);
 
         await _context.SaveChangesAsync();
     }

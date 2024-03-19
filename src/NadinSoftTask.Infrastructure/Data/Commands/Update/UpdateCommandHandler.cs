@@ -4,7 +4,7 @@ using NadinSoftTask.Core.Models;
 
 namespace NadinSoftTask.Infrastructure.Data.Commands.Update;
 
-public class UpdateCommandHandler<T> : IRequestHandler<UpdateCommand<T>, T> where T : EntityBase
+public class UpdateCommandHandler : IRequestHandler<UpdateCommand, Product> 
 {
     private readonly ApplicationDbContext _context;
     private readonly IMapper _mapper;
@@ -14,11 +14,11 @@ public class UpdateCommandHandler<T> : IRequestHandler<UpdateCommand<T>, T> wher
         _mapper = mapper;
     }
 
-    public async Task<T> Handle(UpdateCommand<T> command, CancellationToken cancellationToken)
+    public async Task<Product> Handle(UpdateCommand command, CancellationToken cancellationToken)
     {
-        T entity = await _context.Set<T>().FindAsync(command.Entity.Id);
+        Product entity = await _context.Products.FindAsync(command.Entity.Id);
 
-        _mapper.Map<T, T>(command.Entity, entity);
+        _mapper.Map<Product, Product>(command.Entity, entity);
         _context.Update(entity);
 
         await _context.SaveChangesAsync();

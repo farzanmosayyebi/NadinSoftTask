@@ -3,7 +3,7 @@ using NadinSoftTask.Core.Models;
 
 namespace NadinSoftTask.Infrastructure.Data.Commands.Create;
 
-public class CreateCommandHandler<T> : IRequestHandler<CreateCommand<T>, int> where T : EntityBase
+public class CreateCommandHandler : IRequestHandler<CreateCommand, int>
 {
     private readonly ApplicationDbContext _context;
 
@@ -12,9 +12,9 @@ public class CreateCommandHandler<T> : IRequestHandler<CreateCommand<T>, int> wh
         _context = context;
     }
 
-    public async Task<int> Handle(CreateCommand<T> command, CancellationToken cancellationToken)
+    public async Task<int> Handle(CreateCommand command, CancellationToken cancellationToken)
     {
-        await _context.Set<T>().AddAsync(command.Entity);
+        await _context.Products.AddAsync(command.Entity);
         await _context.SaveChangesAsync();
 
         return command.Entity.Id;

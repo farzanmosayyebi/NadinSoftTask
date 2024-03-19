@@ -5,7 +5,7 @@ using NadinSoftTask.Core.Models;
 
 namespace NadinSoftTask.Infrastructure.Data.Queries;
 
-public class ListEntitiesQueryHandler<T> : IRequestHandler<ListEntitiesQuery<T>, List<T>> where T : EntityBase
+public class ListEntitiesQueryHandler : IRequestHandler<ListEntitiesQuery, List<Product>>
 {
     private readonly ApplicationDbContext _context;
 
@@ -14,9 +14,9 @@ public class ListEntitiesQueryHandler<T> : IRequestHandler<ListEntitiesQuery<T>,
         _context = context;
     }
 
-    public async Task<List<T>> Handle(ListEntitiesQuery<T> query, CancellationToken cancellationToken)
+    public async Task<List<Product>> Handle(ListEntitiesQuery query, CancellationToken cancellationToken)
     {
-        IQueryable<T> entities = _context.Set<T>().AsQueryable();
+        IQueryable<Product> entities = _context.Products.AsQueryable();
 
         foreach (var filter in query.Filters)
             entities = entities.Where(filter);
@@ -30,7 +30,7 @@ public class ListEntitiesQueryHandler<T> : IRequestHandler<ListEntitiesQuery<T>,
         if (query.Take != null)
             entities = entities.Take(query.Take.Value);
 
-        return await entities.ToListAsync();
+        return await entities.ToListAsync(cancellationToken: cancellationToken);
 
     }
 }

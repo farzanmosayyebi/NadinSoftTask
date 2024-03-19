@@ -5,7 +5,7 @@ using NadinSoftTask.Infrastructure.Data;
 
 namespace NadinSoftTask.Infrastructure.Data.Queries;
 
-public class GetByIdQueryHandler<T> : IRequestHandler<GetByIdQuery<T>, T> where T : EntityBase
+public class GetByIdQueryHandler : IRequestHandler<GetByIdQuery, Product> 
 {
     private readonly ApplicationDbContext _context;
 
@@ -14,9 +14,9 @@ public class GetByIdQueryHandler<T> : IRequestHandler<GetByIdQuery<T>, T> where 
         _context = context;
     }
 
-    public async Task<T?> Handle(GetByIdQuery<T> query, CancellationToken cancellationToken)
+    public async Task<Product?> Handle(GetByIdQuery query, CancellationToken cancellationToken)
     {
-        IQueryable<T> result = _context.Set<T>().AsQueryable();
+        IQueryable<Product> result = _context.Products.AsQueryable();
 
         result = result.Where(e => e.Id == e.Id);
 

@@ -2,11 +2,11 @@
 using NadinSoftTask.Core.Models;
 
 namespace NadinSoftTask.Infrastructure.Data.Commands.Update;
-public class UpdateCommand<T> : IRequest<T> where T : EntityBase
+public class UpdateCommand : IRequest<Product> 
 {
-    public T Entity { get; set; }
+    public Product Entity { get; set; }
 
-    public UpdateCommand(T entity)
+    public UpdateCommand(Product entity)
     {
         Entity = entity;
     }

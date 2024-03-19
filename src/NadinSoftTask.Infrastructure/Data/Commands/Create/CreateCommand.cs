@@ -3,10 +3,10 @@ using NadinSoftTask.Core.Models;
 
 namespace NadinSoftTask.Infrastructure.Data.Commands.Create;
 
-public class CreateCommand<T> : IRequest<int> where T : EntityBase
+public class CreateCommand : IRequest<int>
 {
-    public T Entity { get; set; }
-    public CreateCommand(T entity)
+    public Product Entity { get; set; }
+    public CreateCommand(Product entity)
     {
         Entity = entity;
     }
