@@ -14,14 +14,17 @@ public class Program
         // Add services to the container.
         DependencyInjectionConfiguration.RegisterServices(builder.Services);
 
-        string connectionString = builder.Configuration.GetConnectionString("DataBase");
+        string connectionString = builder.Configuration.GetConnectionString("SqlServerDatabase");
 
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(connectionString,
-                opt => opt.UseDateOnlyTimeOnly())
+            options.UseSqlServer(connectionString, opt => 
+                opt.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)
+                .UseDateOnlyTimeOnly())
             );
 
-        
+        //builder.Services.AddDbContextFactory<ApplicationDbContext>();
+
+
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
@@ -39,7 +42,6 @@ public class Program
         using (var serviceScope = app.Services.CreateScope())
         {
             var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            dbContext.Database.EnsureCreated();
             dbContext.Database.Migrate();
         }
 
