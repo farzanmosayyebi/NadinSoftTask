@@ -16,21 +16,23 @@ public class ListEntitiesQueryHandler : IRequestHandler<ListEntitiesQuery, List<
 
     public async Task<List<Product>> Handle(ListEntitiesQuery query, CancellationToken cancellationToken)
     {
-        IQueryable<Product> entities = _context.Products.AsQueryable();
+        //IQueryable<Product> entities = _context.Products.AsQueryable();
 
-        foreach (var filter in query.Filters)
-            entities = entities.Where(filter);
+        //foreach (var filter in query.Filters)
+        //    entities = entities.Where(filter);
 
-        foreach (var include in query.Includes)
-            entities = entities.Include(include);
+        //foreach (var include in query.Includes)
+        //    entities = entities.Include(include);
 
-        if (query.Skip != null)
-            entities = entities.Skip(query.Skip.Value);
+        //if (query.Skip != null)
+        //    entities = entities.Skip(query.Skip.Value);
 
-        if (query.Take != null)
-            entities = entities.Take(query.Take.Value);
+        //if (query.Take != null)
+        //    entities = entities.Take(query.Take.Value);
 
-        return await entities.ToListAsync(cancellationToken: cancellationToken);
+        var entities = _context.Products.ToList();
+        return entities;
+        //return await entities.ToListAsync(cancellationToken: cancellationToken);
 
     }
 }
