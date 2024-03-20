@@ -1,6 +1,6 @@
 ﻿namespace NadinSoftTask.Core.Dtos.Product;
 
-public record ProductUpdate(
+public record ProductUpdateDto(
     int Id,
     string Name,
     DateOnly ProduceDate,

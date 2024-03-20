@@ -1,11 +1,10 @@
 ﻿namespace NadinSoftTask.Core.Dtos.Product;
 
-public record ProductGet(
-    int Id,
+public record ProductCreateDto(
     string Name,
     DateOnly ProduceDate,
     string ManufacturerEmail,
     string ManufacturerPhone,
     bool IsAvailable,
-    int CreatorId
+    string CreatorId
     );

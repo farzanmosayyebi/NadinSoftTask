@@ -21,7 +21,7 @@ public class ProductService : IProductService
         _mapper = mapper;
     }
 
-    public async Task<int> CreateProductAsync(ProductCreate productCreate)
+    public async Task<int> CreateProductAsync(ProductCreateDto productCreate)
     {
         Product product = _mapper.Map<Product>(productCreate);
         
@@ -29,30 +29,30 @@ public class ProductService : IProductService
         return await _mediator.Send(request);
     }
 
-    public async Task<ProductGet> GetProductByIdAsync(int id)
+    public async Task<ProductGetDto> GetProductByIdAsync(int id)
     {
         var request = new GetByIdQuery(id);
         Product product = await _mediator.Send(request);
         
-        return _mapper.Map<ProductGet>(product);
+        return _mapper.Map<ProductGetDto>(product);
     }
 
-    public async Task<List<ProductGet>> ListProductsAsync(ProductFilter productFilter)
+    public async Task<List<ProductGetDto>> ListProductsAsync(ProductFilterDto productFilter)
     {
         var request = new ListEntitiesQuery();
         List<Product> products = await _mediator.Send(request);
        
-        return _mapper.Map<List<ProductGet>>(products);
+        return _mapper.Map<List<ProductGetDto>>(products);
     }
 
-    public async Task<ProductGet> UpdateProductAsync(ProductUpdate productUpdate)
+    public async Task<ProductGetDto> UpdateProductAsync(ProductUpdateDto productUpdate)
     {
         Product product = _mapper.Map<Product>(productUpdate);
 
         var request = new UpdateCommand(product);
         Product result = await _mediator.Send(request);
         
-        return _mapper.Map<ProductGet>(result);
+        return _mapper.Map<ProductGetDto>(result);
     }
 
     public async Task DeleteProductAsync(int id)

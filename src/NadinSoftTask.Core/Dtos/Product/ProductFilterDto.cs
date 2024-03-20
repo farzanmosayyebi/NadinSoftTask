@@ -1,6 +1,6 @@
 ﻿namespace NadinSoftTask.Core.Dtos.Product;
 
-public record ProductFilter(
+public record ProductFilterDto(
     string? Name,
     DateOnly? ProduceDate,
     bool? IsAvailable
