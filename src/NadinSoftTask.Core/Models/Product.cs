@@ -1,4 +1,8 @@
-﻿namespace NadinSoftTask.Core.Models;
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace NadinSoftTask.Core.Models;
+
+[Index(nameof(ManufacturerEmail), nameof(ProduceDate), IsUnique = true)]
 public class Product : EntityBase
 {
     public string Name { get; set; } = default!;
