@@ -89,3 +89,4 @@ D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Api\bin\Debug\net7.0\Na
 D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Api\bin\Debug\net7.0\NadinSoftTask.Application.pdb
 D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Api\bin\Debug\net7.0\EntityFrameworkCore.SqlServer.DateOnlyTimeOnly.dll
 D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Api\obj\Debug\net7.0\EFCoreSqlServerDateOnlyTimeOnly.cs
+D:\Programming\NadinSoft\NadinSoftTask\src\NadinSoftTask.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
