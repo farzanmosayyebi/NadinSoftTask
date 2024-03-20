@@ -12,7 +12,7 @@ using NadinSoftTask.Infrastructure.Data;
 namespace NadinSoftTask.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240319073552_InitialMigration")]
+    [Migration("20240320162715_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -240,7 +240,7 @@ namespace NadinSoftTask.Infrastructure.Migrations
 
                     b.Property<string>("ManufacturerEmail")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ManufacturerPhone")
                         .IsRequired()
@@ -256,6 +256,9 @@ namespace NadinSoftTask.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorId");
+
+                    b.HasIndex("ManufacturerEmail", "ProduceDate")
+                        .IsUnique();
 
                     b.ToTable("Products");
                 });

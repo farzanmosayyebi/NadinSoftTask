@@ -164,7 +164,7 @@ namespace NadinSoftTask.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProduceDate = table.Column<DateOnly>(type: "date", nullable: false),
-                    ManufacturerEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ManufacturerEmail = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ManufacturerPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsAvailable = table.Column<bool>(type: "bit", nullable: false),
                     CreatorId = table.Column<string>(type: "nvarchar(450)", nullable: false)
@@ -223,6 +223,12 @@ namespace NadinSoftTask.Infrastructure.Migrations
                 name: "IX_Products_CreatorId",
                 table: "Products",
                 column: "CreatorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_ManufacturerEmail_ProduceDate",
+                table: "Products",
+                columns: new[] { "ManufacturerEmail", "ProduceDate" },
+                unique: true);
         }
 
         /// <inheritdoc />

@@ -237,7 +237,7 @@ namespace NadinSoftTask.Infrastructure.Migrations
 
                     b.Property<string>("ManufacturerEmail")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ManufacturerPhone")
                         .IsRequired()
@@ -253,6 +253,9 @@ namespace NadinSoftTask.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorId");
+
+                    b.HasIndex("ManufacturerEmail", "ProduceDate")
+                        .IsUnique();
 
                     b.ToTable("Products");
                 });
