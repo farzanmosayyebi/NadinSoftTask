@@ -20,6 +20,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        
         builder.Entity<Product>().HasKey(e => e.Id);
 
         builder.Entity<Product>().HasOne(e => e.Creator).WithMany(c => c.CreatedProducts);
