@@ -17,10 +17,6 @@ public class DtoEntityMapperProfile : Profile
             .ForMember(dest => dest.CreatorId, opt => opt.MapFrom(src => src.Creator.Id));
         CreateMap<Product, Product>();
 
-        CreateMap<UserRegisterDto, ApplicationUser>()
-            .ForMember(dest => dest.CreatedProducts, opt => opt.Ignore())
-            .ForMember(dest => dest.Id, opt => opt.Ignore())
-            .ForMember(dest => dest.SecurityStamp, opt => opt.NullSubstitute(Guid.NewGuid().ToString()));
 
     }
 }
