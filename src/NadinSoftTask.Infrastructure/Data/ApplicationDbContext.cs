@@ -5,7 +5,7 @@ using NadinSoftTask.Core.Models;
 
 namespace NadinSoftTask.Infrastructure.Data;
 
-public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole, string>
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
 {
     public DbSet<Product> Products { get; set; }
 
