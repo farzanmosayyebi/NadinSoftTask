@@ -10,7 +10,8 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
         string connectionString = "Server=(localdb)\\mssqllocaldb;Database=ProductCatalogue;Integrated Security=True;";
         var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
-        optionsBuilder.UseSqlServer(connectionString, opt => opt.UseDateOnlyTimeOnly());
+        optionsBuilder.UseSqlServer(connectionString, opt => opt.UseDateOnlyTimeOnly())
+            .EnableSensitiveDataLogging();
 
         return new ApplicationDbContext(optionsBuilder.Options);
     }
