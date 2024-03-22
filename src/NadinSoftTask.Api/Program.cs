@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using System.Text.Json.Serialization;
+using System.Security.Claims;
 
 
 namespace NadinSoftTask.Api;
@@ -29,7 +31,7 @@ public class Program
                 .UseDateOnlyTimeOnly())
             );
 
-        builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+        builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
@@ -53,8 +55,20 @@ public class Program
                 };
             });
 
+        builder.Services.AddAuthorization(options =>
+        {
+            options.AddPolicy("LoggedInUsersOnly", policy =>
+                policy.RequireAuthenticatedUser());
+        });
 
-        builder.Services.AddControllers();
+        builder.Services.Configure<IdentityOptions>(options =>
+            options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier);
+
+        builder.Services.AddControllers()
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+            });
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(option =>
@@ -84,6 +98,7 @@ public class Program
                 }
             });
         });
+
 
         var app = builder.Build();
 
