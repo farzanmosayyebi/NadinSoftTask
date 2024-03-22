@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ggliuoRqxg1qiw6glkhKCyxzDjXhAU34bmAn6UEg2AdaAVrZrGlRqckkvwGou8n8gDmEHSmUD1S7+SHc7l4Sdw==",
+  "dgSpecHash": "XEv3WX2kajB9U0Odt58aELM3d9WH93SCaZVWstjnooIwkiY7XOdv18n+GwI3+E9l8fM/UcalGssAVr9cBmu3dA==",
   "success": true,
   "projectFilePath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Application\\NadinSoftTask.Application.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,8 @@
     "C:\\Users\\LENOVO\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.17\\microsoft.aspnetcore.cryptography.internal.7.0.17.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.17\\microsoft.aspnetcore.cryptography.keyderivation.7.0.17.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.17\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.17.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

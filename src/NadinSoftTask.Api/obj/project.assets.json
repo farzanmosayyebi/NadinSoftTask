@@ -1682,6 +1682,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "NadinSoftTask.Core": "1.0.0",
           "NadinSoftTask.Infrastructure": "1.0.0"
         },
