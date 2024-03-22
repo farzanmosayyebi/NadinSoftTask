@@ -2,7 +2,8 @@
 
 public record ProductFilterDto(
     string? Name,
-    DateOnly? ProduceDate,
-    bool? IsAvailable
-    //CreatorId
+    bool? IsAvailable,
+    string? CreatorUserName,
+    int? Take,
+    int? Skip
     );
