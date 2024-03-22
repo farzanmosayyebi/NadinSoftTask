@@ -7,5 +7,5 @@ public record ProductGetDto(
     string ManufacturerEmail,
     string ManufacturerPhone,
     bool IsAvailable,
-    string CreatorId
+    string CreatorUserName
     );
