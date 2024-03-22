@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using NadinSoftTask.Core.Models;
 
 namespace NadinSoftTask.Infrastructure.Data.Commands.Update;
@@ -16,14 +17,16 @@ public class UpdateCommandHandler : IRequestHandler<UpdateCommand, Product>
 
     public async Task<Product> Handle(UpdateCommand command, CancellationToken cancellationToken)
     {
-        Product entity = await _context.Products.FindAsync(command.Entity.Id);
+        //_context.Update(command.Entity);
 
-        _mapper.Map<Product, Product>(command.Entity, entity);
-        _context.Update(entity);
+        if (_context.Entry(command.Entity).State == EntityState.Detached)
+            _context.Attach(command.Entity);
 
-        await _context.SaveChangesAsync();
+        _context.Entry(command.Entity).State = EntityState.Modified;
+
+        await _context.SaveChangesAsync(cancellationToken);
         
-        return entity;
+        return command.Entity;
     }
 
 
