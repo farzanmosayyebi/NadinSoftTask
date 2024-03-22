@@ -1,6 +1,7 @@
 ﻿using MediatR;
-using NadinSoftTask.Core.Models;
 using System.Linq.Expressions;
+
+using NadinSoftTask.Core.Models;
 
 namespace NadinSoftTask.Infrastructure.Data.Queries;
 

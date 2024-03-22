@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using NadinSoftTask.Core.Dtos.Product;
 using NadinSoftTask.Core.Models;
 using System.Linq.Expressions;
 
@@ -11,15 +12,22 @@ public class ListEntitiesQuery : IRequest<List<Product>>
     public int? Take { get; set; }
     public Expression<Func<Product, object>>[] Includes { get; set; }
 
-    public ListEntitiesQuery(Expression<Func<Product, bool>>[] filters = null!,
-            int? skip = null,
-            int? take = null,
-            params Expression<Func<Product, object>>[] includes)
+    public ListEntitiesQuery(ProductFilterDto productFilter, params Expression<Func<Product, object>>[] includes)
     {
-        Filters = filters ?? Array.Empty<Expression<Func<Product, bool>>>();
         Includes = includes ?? Array.Empty<Expression<Func<Product, object>>>();
 
-        Skip = skip;
-        Take = take;
+        Expression<Func<Product, bool>> nameFilter = product => productFilter.Name == null ? true
+            : product.Name.StartsWith(productFilter.Name);
+     
+        Expression<Func<Product, bool>> isAvailable = product => productFilter.IsAvailable == null ? true
+            : product.IsAvailable == productFilter.IsAvailable;
+        
+        Expression<Func<Product, bool>> creatorFilter = product => productFilter.CreatorUserName == null ? true
+            : product.Creator.UserName.StartsWith(productFilter.CreatorUserName);
+
+        Filters = new Expression<Func<Product, bool>>[] { nameFilter, isAvailable, creatorFilter};
+
+        Skip = productFilter.Skip;
+        Take = productFilter.Take;
     }
 }

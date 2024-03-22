@@ -18,7 +18,7 @@ public class GetByIdQueryHandler : IRequestHandler<GetByIdQuery, Product>
     {
         IQueryable<Product> result = _context.Products.AsQueryable();
 
-        result = result.Where(e => e.Id == e.Id);
+        result = result.Where(e => e.Id == query.Id);
 
         foreach (var include in query.Includes)
             result = result.Include(include);
