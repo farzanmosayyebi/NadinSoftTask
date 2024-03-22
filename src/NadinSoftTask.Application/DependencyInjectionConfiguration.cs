@@ -17,9 +17,11 @@ public class DependencyInjectionConfiguration
     public static void RegisterServices(IServiceCollection services)
     {
         services.AddAutoMapper(typeof(DtoEntityMapperProfile));
+        
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining(typeof(CreateCommand)));
-        services.AddScoped<IProductService, ProductService>();
 
+        services.AddScoped<IProductService, ProductService>();
+        services.AddScoped<IAccountService, AccountService>();
         // Add Validators
     }
 }
