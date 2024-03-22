@@ -7,6 +7,6 @@ namespace NadinSoftTask.Core.Models;
 public class ApplicationUser : IdentityUser<Guid>
 {
     [ProtectedPersonalData]
-    public new string UserName { get; set; } = default!;
+    public override string UserName { get; set; } = default!;
     public List<Product> CreatedProducts { get; set; } = default!;
 }
