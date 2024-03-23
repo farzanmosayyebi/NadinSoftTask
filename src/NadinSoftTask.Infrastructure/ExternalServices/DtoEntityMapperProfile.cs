@@ -4,7 +4,6 @@ using NadinSoftTask.Core.Models;
 using NadinSoftTask.Core.Dtos.Product;
 using NadinSoftTask.Core.Dtos.Account;
 using NadinSoftTask.Core.Dtos.Security;
-using Microsoft.Extensions.Options;
 
 namespace NadinSoftTask.Infrastructure.ExternalServices;
 
@@ -34,5 +33,8 @@ public class DtoEntityMapperProfile : Profile
         CreateMap<UserRegisterDto, ApplicationUser>()
             .ForSourceMember(src => src.Password, opt => opt.DoNotValidate())
             .ForMember(dest => dest.CreatedProducts, opt => opt.NullSubstitute(new List<Product>()));
+
+        CreateMap<ApplicationUser, UserInfoDto>();
+            //.ForMember(dest => dest.CreatedProducts, options => options.MapFrom(src => src.CreatedProducts));
     }
 }
