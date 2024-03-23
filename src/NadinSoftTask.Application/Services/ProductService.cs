@@ -9,6 +9,7 @@ using NadinSoftTask.Infrastructure.Data.Queries;
 using NadinSoftTask.Infrastructure.Data.Commands.Create;
 using NadinSoftTask.Infrastructure.Data.Commands.Update;
 using NadinSoftTask.Infrastructure.Data.Commands.Delete;
+using FluentValidation;
 
 namespace NadinSoftTask.Application.Services;
 
@@ -17,16 +18,23 @@ public class ProductService : IProductService
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
     private readonly UserManager<ApplicationUser> _userManager;
+    private readonly IValidator<ProductCreateDto> _productCreateValidator;
+    private readonly IValidator<ProductUpdateDto> _productUpdateValidator;
 
-    public ProductService(IMediator mediator, IMapper mapper, UserManager<ApplicationUser> userManager)
+    public ProductService(IMediator mediator, IMapper mapper, UserManager<ApplicationUser> userManager,
+                        IValidator<ProductUpdateDto> productUpdateValidator, IValidator<ProductCreateDto> productCreateValidator)
     {
         _mediator = mediator;
         _mapper = mapper;
         _userManager = userManager;
+        _productUpdateValidator = productUpdateValidator;
+        _productCreateValidator = productCreateValidator;
     }
 
     public async Task<int> CreateProductAsync(ProductCreateDto productCreate)
     {
+        await _productCreateValidator.ValidateAndThrowAsync(productCreate);
+
         ApplicationUser creator = await _userManager.FindByIdAsync(productCreate.CreatorId)
                 ?? throw new NullReferenceException();
 
@@ -57,14 +65,9 @@ public class ProductService : IProductService
 
     public async Task<ProductGetDto> UpdateProductAsync(ProductUpdateDto productUpdate)
     {
-        Product existingProduct = await _mediator.Send(new GetByIdQuery(productUpdate.Id))
-            ?? throw new NullReferenceException();
+        await _productUpdateValidator.ValidateAndThrowAsync(productUpdate);
 
-        Product product = _mapper.Map<Product>(productUpdate);
-
-        _mapper.Map<Product, Product>(product, existingProduct);
-
-        var request = new UpdateCommand(product);
+        var request = new UpdateCommand(productUpdate);
         Product result = await _mediator.Send(request);
         
         return _mapper.Map<ProductGetDto>(result);

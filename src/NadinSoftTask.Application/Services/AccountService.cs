@@ -2,6 +2,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -15,15 +16,19 @@ public class AccountService : IAccountService
 {
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly IMapper _mapper;
+    private readonly IValidator<UserRegisterDto> _userRegisterValidator;
 
-    public AccountService(IConfiguration configuration, UserManager<ApplicationUser> userManager, IMapper mapper)
+    public AccountService(IConfiguration configuration, UserManager<ApplicationUser> userManager, IMapper mapper,
+                        IValidator<UserRegisterDto> userRegisterValidator)
     {
         _userManager = userManager;
         _mapper = mapper;
+        _userRegisterValidator = userRegisterValidator;
     }
 
     public async Task<List<Claim>> Login(UserLoginDto loginDto)
     {
+
         var user = await _userManager.FindByNameAsync(loginDto.UserName);
         
         if (user == null)
@@ -48,17 +53,14 @@ public class AccountService : IAccountService
 
     public async Task Register(UserRegisterDto registerDto)
     {
+        await _userRegisterValidator.ValidateAndThrowAsync(registerDto);
+
         var user = await _userManager.FindByNameAsync(registerDto.UserName);
 
         if (user != null)
             throw new DuplicateNameException();
 
-        ApplicationUser newUser = new ApplicationUser
-        {
-            UserName = registerDto.UserName,
-            Email = registerDto.Email,
-            CreatedProducts = new List<Product>()
-        };
+        ApplicationUser newUser = _mapper.Map<ApplicationUser>(registerDto);
 
         var result = await _userManager.CreateAsync(newUser, registerDto.Password);
 
