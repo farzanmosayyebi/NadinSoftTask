@@ -1,15 +1,16 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using MediatR;
 using AutoMapper;
+using FluentValidation;
 
 using NadinSoftTask.Core.Models;
 using NadinSoftTask.Core.Interfaces;
+using NadinSoftTask.Core.Exceptions;
 using NadinSoftTask.Core.Dtos.Product;
 using NadinSoftTask.Infrastructure.Data.Queries;
 using NadinSoftTask.Infrastructure.Data.Commands.Create;
 using NadinSoftTask.Infrastructure.Data.Commands.Update;
 using NadinSoftTask.Infrastructure.Data.Commands.Delete;
-using FluentValidation;
 
 namespace NadinSoftTask.Application.Services;
 
@@ -36,7 +37,7 @@ public class ProductService : IProductService
         await _productCreateValidator.ValidateAndThrowAsync(productCreate);
 
         ApplicationUser creator = await _userManager.FindByIdAsync(productCreate.CreatorId)
-                ?? throw new NullReferenceException();
+                ?? throw new UserNotFoundException("User not found");
 
         Product product = _mapper.Map<Product>(productCreate);
         
@@ -50,7 +51,7 @@ public class ProductService : IProductService
     {
         var request = new GetByIdQuery(id, product => product.Creator);
         Product product = await _mediator.Send(request)
-            ?? throw new NullReferenceException();
+            ?? throw new ItemNotFoundException(id, typeof(Product).Name);
         
         return _mapper.Map<ProductGetDto>(product);
     }
@@ -76,7 +77,7 @@ public class ProductService : IProductService
     public async Task DeleteProductAsync(int id)
     {
         var product = await _mediator.Send(new GetByIdQuery(id))
-            ?? throw new NullReferenceException();
+            ?? throw new ItemNotFoundException(id, typeof(Product).Name);
 
         await _mediator.Send(new DeleteCommand(product));
     }
@@ -84,7 +85,8 @@ public class ProductService : IProductService
     public async Task<string> GetCreatorId(int productId)
     {
         var product = await _mediator.Send(new GetByIdQuery(productId, product => product.Creator))
-            ?? throw new NullReferenceException();
+            ?? throw new ItemNotFoundException(productId, typeof(Product).Name);
+
         return product.Creator.Id.ToString();
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using NadinSoftTask.Core.Exceptions;
 using NadinSoftTask.Core.Models;
 
 namespace NadinSoftTask.Infrastructure.Data.Commands.Update;
@@ -18,24 +19,13 @@ public class UpdateCommandHandler : IRequestHandler<UpdateCommand, Product>
     public async Task<Product> Handle(UpdateCommand command, CancellationToken cancellationToken)
     {
         Product entityToUpdate = await _context.Products.FindAsync(command.EntityUpdateDto.Id)
-            ?? throw new NullReferenceException();
+            ?? throw new ItemNotFoundException(command.EntityUpdateDto.Id, typeof(Product).Name);
 
         _mapper.Map(command.EntityUpdateDto, entityToUpdate);
 
         await _context.SaveChangesAsync(cancellationToken);
 
         return entityToUpdate;
-
-        //_context.Update(command.Entity);
-
-        //if (_context.Entry(command.Entity).State == EntityState.Detached)
-        //    _context.Attach(command.Entity);
-
-        //_context.Entry(command.Entity).State = EntityState.Modified;
-
-        //await _context.SaveChangesAsync(cancellationToken);
-        
-        //return command.Entity;
     }
 
 

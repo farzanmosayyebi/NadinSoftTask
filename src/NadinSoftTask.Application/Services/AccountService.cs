@@ -1,15 +1,14 @@
 ﻿using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
 using AutoMapper;
 using FluentValidation;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
 
 using NadinSoftTask.Core.Dtos.Security;
 using NadinSoftTask.Core.Interfaces;
 using NadinSoftTask.Core.Models;
+using NadinSoftTask.Core.Exceptions;
 
 namespace NadinSoftTask.Application.Services;
 public class AccountService : IAccountService
@@ -18,7 +17,7 @@ public class AccountService : IAccountService
     private readonly IMapper _mapper;
     private readonly IValidator<UserRegisterDto> _userRegisterValidator;
 
-    public AccountService(IConfiguration configuration, UserManager<ApplicationUser> userManager, IMapper mapper,
+    public AccountService(UserManager<ApplicationUser> userManager, IMapper mapper,
                         IValidator<UserRegisterDto> userRegisterValidator)
     {
         _userManager = userManager;
@@ -29,12 +28,11 @@ public class AccountService : IAccountService
     public async Task<List<Claim>> Login(UserLoginDto loginDto)
     {
 
-        var user = await _userManager.FindByNameAsync(loginDto.UserName);
+        var user = await _userManager.FindByNameAsync(loginDto.UserName)
+            ?? throw new UserNotFoundException("Invalid username");
         
-        if (user == null)
-            throw new NullReferenceException();
         if (!await _userManager.CheckPasswordAsync(user, loginDto.Password))
-            throw new UnauthorizedAccessException();
+            throw new UnauthorizedAccessException("Invalid password");
 
         var userRoles = await _userManager.GetRolesAsync(user);
         
@@ -58,14 +56,14 @@ public class AccountService : IAccountService
         var user = await _userManager.FindByNameAsync(registerDto.UserName);
 
         if (user != null)
-            throw new DuplicateNameException();
+            throw new DuplicateNameException("Another user with the given username exists");
 
         ApplicationUser newUser = _mapper.Map<ApplicationUser>(registerDto);
 
         var result = await _userManager.CreateAsync(newUser, registerDto.Password);
 
         if (!result.Succeeded)
-            throw new InvalidOperationException();
+            throw new InvalidOperationException("User registeration failed.");
 
     }
 }
