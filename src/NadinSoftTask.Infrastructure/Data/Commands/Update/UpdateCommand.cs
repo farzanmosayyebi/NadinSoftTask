@@ -1,13 +1,14 @@
 ﻿using MediatR;
+using NadinSoftTask.Core.Dtos.Product;
 using NadinSoftTask.Core.Models;
 
 namespace NadinSoftTask.Infrastructure.Data.Commands.Update;
 public class UpdateCommand : IRequest<Product> 
 {
-    public Product Entity { get; set; }
+    public ProductUpdateDto EntityUpdateDto { get; set; }
 
-    public UpdateCommand(Product entity)
+    public UpdateCommand(ProductUpdateDto entityUpdateDto)
     {
-        Entity = entity;
+        EntityUpdateDto = entityUpdateDto;
     }
 }

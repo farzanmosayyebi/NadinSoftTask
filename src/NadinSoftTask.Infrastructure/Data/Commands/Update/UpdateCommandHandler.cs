@@ -17,16 +17,25 @@ public class UpdateCommandHandler : IRequestHandler<UpdateCommand, Product>
 
     public async Task<Product> Handle(UpdateCommand command, CancellationToken cancellationToken)
     {
-        //_context.Update(command.Entity);
+        Product entityToUpdate = await _context.Products.FindAsync(command.EntityUpdateDto.Id)
+            ?? throw new NullReferenceException();
 
-        if (_context.Entry(command.Entity).State == EntityState.Detached)
-            _context.Attach(command.Entity);
-
-        _context.Entry(command.Entity).State = EntityState.Modified;
+        _mapper.Map(command.EntityUpdateDto, entityToUpdate);
 
         await _context.SaveChangesAsync(cancellationToken);
+
+        return entityToUpdate;
+
+        //_context.Update(command.Entity);
+
+        //if (_context.Entry(command.Entity).State == EntityState.Detached)
+        //    _context.Attach(command.Entity);
+
+        //_context.Entry(command.Entity).State = EntityState.Modified;
+
+        //await _context.SaveChangesAsync(cancellationToken);
         
-        return command.Entity;
+        //return command.Entity;
     }
 
 
