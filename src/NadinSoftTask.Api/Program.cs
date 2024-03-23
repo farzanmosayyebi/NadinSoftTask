@@ -10,6 +10,7 @@ using System.Text;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 using System.Security.Claims;
+using NadinSoftTask.Api.Middlewares;
 
 
 namespace NadinSoftTask.Api;
@@ -64,6 +65,8 @@ public class Program
         builder.Services.Configure<IdentityOptions>(options =>
             options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier);
 
+        builder.Services.AddTransient<ExceptionMiddleware>();
+
         builder.Services.AddControllers()
             .AddJsonOptions(options =>
             {
@@ -107,17 +110,6 @@ public class Program
         {
             app.UseSwagger();
             app.UseSwaggerUI();
-            //app.UseSwaggerUI(c =>
-            //{
-            //    //c.SwaggerEndpoint("/swagger/index.html", "Your API V1");
-            //    c.RoutePrefix = string.Empty;
-
-            //    // Configure Swagger UI for authorization
-            //    c.OAuthClientId("swagger");
-            //    c.OAuthClientSecret("secret");
-            //    c.OAuthUseBasicAuthenticationWithAccessCodeGrant();
-            //});
-
             app.MapSwagger().RequireAuthorization();
             app.UseDeveloperExceptionPage();
         }
@@ -128,6 +120,7 @@ public class Program
             dbContext.Database.Migrate();
         }
 
+        app.UseMiddleware<ExceptionMiddleware>();
 
         app.UseHttpsRedirection();
         app.UseRouting();
@@ -136,7 +129,7 @@ public class Program
         app.UseAuthorization();
 
         //app.MapControllers();
-        app.UseEndpoints(endpoint => endpoint.MapControllers());
+        app.MapControllers();
 
         app.Run();
     }
