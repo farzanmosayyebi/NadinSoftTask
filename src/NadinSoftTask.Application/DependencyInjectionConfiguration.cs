@@ -1,14 +1,10 @@
-﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using FluentValidation;
+
 using NadinSoftTask.Application.Services;
 using NadinSoftTask.Core.Interfaces;
-using NadinSoftTask.Core.Models;
-using NadinSoftTask.Infrastructure.Data;
 using NadinSoftTask.Infrastructure.Data.Commands.Create;
-using NadinSoftTask.Infrastructure.Data.Queries;
 using NadinSoftTask.Infrastructure.ExternalServices;
-using System.Reflection;
 
 namespace NadinSoftTask.Application;
 
@@ -22,6 +18,7 @@ public class DependencyInjectionConfiguration
 
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<IAccountService, AccountService>();
-        // Add Validators
+
+        services.AddValidatorsFromAssemblyContaining(typeof(DependencyInjectionConfiguration));
     }
 }
