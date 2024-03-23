@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jTQ+b0RYeNVXsGVmTDjydaS50nXIK0cpP61C64O9rreJrJ9K8CjwcJzQcSfAyDZ7XUnUqEwC81GF7Jb9KkPxCQ==",
+  "dgSpecHash": "dA+GjnuChyBTSVVVQ0K30oxbyFF5zoeyGIxf2YV0eCv61yrlAfEE3qIpwFC+6oyUtZlHKOPxiAOCA72II75hnQ==",
   "success": true,
   "projectFilePath": "D:\\Programming\\NadinSoft\\NadinSoftTask\\src\\NadinSoftTask.Api\\NadinSoftTask.Api.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,9 @@
     "C:\\Users\\LENOVO\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\erikej.entityframeworkcore.sqlserver.dateonlytimeonly\\7.0.8\\erikej.entityframeworkcore.sqlserver.dateonlytimeonly.7.0.8.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

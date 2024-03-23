@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NadinSoftTask.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2847b194540ac8fb38179afd4b7c9611691a09a8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81599859300a20804c2e1655eebcba5a927bcb05")]
 [assembly: System.Reflection.AssemblyProductAttribute("NadinSoftTask.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NadinSoftTask.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
