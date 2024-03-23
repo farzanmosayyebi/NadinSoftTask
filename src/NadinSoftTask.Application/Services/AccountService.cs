@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using AutoMapper;
 using FluentValidation;
@@ -9,6 +10,7 @@ using NadinSoftTask.Core.Dtos.Security;
 using NadinSoftTask.Core.Interfaces;
 using NadinSoftTask.Core.Models;
 using NadinSoftTask.Core.Exceptions;
+using NadinSoftTask.Core.Dtos.Account;
 
 namespace NadinSoftTask.Application.Services;
 public class AccountService : IAccountService
@@ -24,6 +26,7 @@ public class AccountService : IAccountService
         _mapper = mapper;
         _userRegisterValidator = userRegisterValidator;
     }
+
 
     public async Task<List<Claim>> Login(UserLoginDto loginDto)
     {
@@ -65,5 +68,14 @@ public class AccountService : IAccountService
         if (!result.Succeeded)
             throw new InvalidOperationException("User registeration failed.");
 
+    }
+    public async Task<UserInfoDto> GetUserInfo(string userId)
+    {
+        ApplicationUser user = await _userManager.Users
+            .Include(u => u.CreatedProducts)
+            .SingleOrDefaultAsync(u => u.Id == Guid.Parse(userId))
+            ?? throw new UserNotFoundException("User not found.");
+
+        return _mapper.Map<UserInfoDto>(user);
     }
 }
